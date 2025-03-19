@@ -9,11 +9,21 @@ import UIKit
 
 final class FactoryViewController {
 
+    private let navigator: Navigator
+
+    init(navigator: Navigator) {
+        self.navigator = navigator
+    }
+
     func createHomeViewController() -> HomeViewController {
-        return HomeViewController()
+        let vc = HomeViewController()
+        vc.navigator = navigator
+        return vc
     }
 
     func createLoginViewController() -> LoginViewController {
-        return LoginViewController()
+        let vc = LoginViewController()
+        vc.navigator = navigator
+        return vc
     }
 }
